@@ -9,10 +9,28 @@ import App from '../App';
 import Agregar from './Agregar';
 import Detalle from './Detalle';
 import Modificar from './Modificar';
+import { Button } from '@material-ui/core';
 
-function Rout() {
+export default function Rout() {
   return (
       <Router >   
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Button>
+              <Link to="/">App</Link>
+              </Button>
+            </li>
+            <li>
+              <Link to="/detalle">Detalle</Link>
+            </li>
+            <li>
+              <Link to="/Modificar">Modificar</Link>
+            </li>
+          </ul>
+        </nav>
+
         <Switch>
           <Route path="/" exact> 
             <App/>          
@@ -27,9 +45,9 @@ function Rout() {
             <Modificar/>
           </Route>
         </Switch>  
+        </div>
     </Router>
 
   );
 }
 
-export default Rout;

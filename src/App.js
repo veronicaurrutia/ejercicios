@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 import './App.css';
 import  Inicio from './Componentes/Inicio';
-import ButtonPrimary from './Componentes/ButtonPrimary';
 import  Selector from './Componentes/Selector';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -43,16 +36,16 @@ render(){
         <Selector/>
        {this.state.data.map(tutorial=>{
          return(
-          <List>
-          <ListItem button to="/detalles">
+          <List component="nav">
+          <ListItem button component="a" href="/detalle">
             <ListItemText primary={tutorial.nombre} secondary={tutorial.profesor}/>
           </ListItem>
           <Divider variant="inset" component="li" />
         </List>
          )
        })}
+        
       </div>
-     
     </div>
   );
 }
